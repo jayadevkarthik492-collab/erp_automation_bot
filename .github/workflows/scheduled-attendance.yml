@@ -27,8 +27,12 @@ jobs:
     - name: Create config file from secrets
       run: |
         $config = @{
-          username = "${{ secrets.ERP_USERNAME }}"
-          password = "${{ secrets.ERP_PASSWORD }}"
+          users = @(
+            @{
+              username = "${{ secrets.ERP_USERNAME }}"
+              password = "${{ secrets.ERP_PASSWORD }}"
+            }
+          )
           login_url = "${{ secrets.ERP_LOGIN_URL }}"
           checkin_page_url = "${{ secrets.ERP_CHECKIN_URL }}"
           headless = $true

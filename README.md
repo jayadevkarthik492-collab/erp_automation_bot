@@ -37,10 +37,36 @@ Edit `config.json` with your ERP credentials:
 
 ```json
 {
-    "username": "your_employee_id",
-    "password": "your_password",
+    "users": [
+        {
+            "username": "your_employee_id",
+            "password": "your_password"
+        }
+    ],
     "login_url": "https://erp.hippoclouds.com/login#login",
     "checkin_page_url": "https://erp.hippoclouds.com/app/employee-checkin/new-employee-checkin",
+    "headless": true,
+    "latitude": 17.7274680,
+    "longitude": 83.3119580
+}
+```
+
+**Multi-User Support:**
+Add multiple users to the `users` array for batch processing:
+
+```json
+{
+    "users": [
+        {
+            "username": "employee1_id",
+            "password": "employee1_password"
+        },
+        {
+            "username": "employee2_id", 
+            "password": "employee2_password"
+        }
+    ],
+    "login_url": "...",
     "headless": true,
     "latitude": 17.7274680,
     "longitude": 83.3119580
